@@ -1,0 +1,70 @@
+**
+****************************************
+**
+** AERMOD Input 
+**
+****************************************
+**
+**
+****************************************
+** AERMOD Control Pathway
+****************************************
+**
+**
+CO STARTING
+   TITLEONE AB617 Point Sources
+   MODELOPT DFAULT CONC NODRYDPLT NOWETDPLT
+   AVERTIME 1 PERIOD
+   URBANOPT 435000 URBAN_AREA 1.00
+   POLLUTID TRACER
+   RUNORNOT RUN
+   FLAGPOLE 1.5
+CO FINISHED
+**
+****************************************
+** AERMOD Source Pathway
+****************************************
+**
+**
+SO STARTING
+   INCLUDED 22480-2.src
+SO FINISHED
+**
+****************************************
+** AERMOD Receptor Pathway
+****************************************
+**
+**
+RE STARTING
+   INCLUDED /wrk2/ceqa/eoak/aermod/+recs/eoak.rec
+RE FINISHED
+**
+****************************************
+** AERMOD Meteorology Pathway
+****************************************
+**
+**
+ME STARTING
+ME SURFFILE /wrk2/bkoo/mmif/mmifv342/out.wrfv41_2018_1km_aermod_yearly/CELLIJ_74_97.sfc
+ME SURFDATA   99999 2018
+ME PROFFILE /wrk2/bkoo/mmif/mmifv342/out.wrfv41_2018_1km_aermod_yearly/CELLIJ_74_97.pfl
+ME PROFBASE    1 METERS
+ME UAIRDATA   99999 2018
+ME FINISHED
+
+**
+****************************************
+** AERMOD Output Pathway
+****************************************
+**
+**
+OU STARTING
+   FILEFORM EXP
+   RECTABLE 1 1ST
+** Auto-Generated Plotfiles
+** Plotfile Path:
+   PLOTFILE 1 ALL 1ST H1G_22480-2.PLT
+   PLOTFILE PERIOD ALL PE_22480-2.PLT
+OU FINISHED
+**
+****************************************
