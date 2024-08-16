@@ -29,7 +29,4 @@ aer_inp_path = "Input/aermod_shell.txt"
 with open(aer_inp_path, 'r') as inp:
     inp_shell = inp.read()
 
-# Path to cancer slope factors
-cancslpf_path = "Input/cancslpf.csv"
-cancslpf = pd.read_csv(cancslpf_path)
 
