@@ -171,23 +171,27 @@ def plot_map(conc_gdf, out_path, plot_col = None, label = None, tooltip = True, 
 
     '''
     conc_gdf = conc_gdf.copy().loc[conc_gdf[plot_col] > thres]
-    if plot_col is None:
-        m = conc_gdf.explore(tiles='CartoDB positron',
-                             tooltip=tooltip,
-                             marker_type='circle',
-                             marker_kwds={'radius':25,
-                                          'fill':True},
-                             style_kwds={'stroke':False})
+    if len(conc_gdf) > 0:
+        if plot_col is None:
+            m = conc_gdf.explore(tiles='CartoDB positron',
+                                 tooltip=tooltip,
+                                 marker_type='circle',
+                                 marker_kwds={'radius':25,
+                                              'fill':True},
+                                 style_kwds={'stroke':False})
+        else:
+            conc_gdf.rename(columns={plot_col:label}, inplace=True)
+            m = conc_gdf.explore(tiles='CartoDB positron',
+                                 column=label,
+                                 tooltip=tooltip,
+                                 vmax=vmax,
+                                 marker_type='circle',
+                                 marker_kwds={'radius':25,
+                                              'fill':True},
+                                 style_kwds={'stroke':False})
+        m.save(out_path)  
     else:
-        conc_gdf.rename(columns={plot_col:label}, inplace=True)
-        m = conc_gdf.explore(tiles='CartoDB positron',
-                             column=label,
-                             tooltip=tooltip,
-                             vmax=vmax,
-                             marker_type='circle',
-                             marker_kwds={'radius':25,
-                                          'fill':True},
-                             style_kwds={'stroke':False})
-    m.save(out_path)  
+        print("No receptors above threshold - will not output map")
+        pass
 
 
