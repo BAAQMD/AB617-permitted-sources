@@ -1,0 +1,62 @@
+**
+****************************************
+**
+** AERMOD Input 
+**
+****************************************
+**
+**
+****************************************
+** AERMOD Control Pathway
+****************************************
+**
+**
+CO STARTING
+   TITLEONE AB617 Point Sources
+   MODELOPT DFAULT CONC NODRYDPLT NOWETDPLT
+   AVERTIME 1 PERIOD
+   URBANOPT 435000 URBAN_AREA 1.00
+   POLLUTID TRACER
+   RUNORNOT RUN
+   FLAGPOLE 1.5
+CO FINISHED
+**
+****************************************
+** AERMOD Source Pathway
+****************************************
+**
+**
+SO STARTING
+   INCLUDED {}
+SO FINISHED
+**
+****************************************
+** AERMOD Receptor Pathway
+****************************************
+**
+**
+RE STARTING
+   INCLUDED {}
+RE FINISHED
+**
+****************************************
+** AERMOD Meteorology Pathway
+****************************************
+**
+**
+{}
+**
+****************************************
+** AERMOD Output Pathway
+****************************************
+**
+**
+OU STARTING
+   FILEFORM EXP
+   RECTABLE 1 1ST
+** Auto-Generated Plotfiles
+** Plotfile Path:
+{}
+OU FINISHED
+**
+****************************************
